@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace Task3
+﻿namespace Task3
 {
-
     internal class Vehicle
     {
         //Стоимость в долларах
