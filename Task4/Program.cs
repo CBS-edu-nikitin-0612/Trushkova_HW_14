@@ -2,31 +2,34 @@
 using Task4;
 
 Console.WriteLine("Hello, Teacher!");
-
-const string keyProDocument = "qwertyPro";
-const string keyExpertDocument = "qwertyExp";
+//Пароль для версии ProDocumentWorker
+const string passwordProDocument = "qwertyPro";
+//Пароль для версии ExpertDocmentWorker
+const string passwordExpertDocument = "qwertyExp";
 
 while (true)
 {
     Console.WriteLine("\nВведите ключ доступа. В конце ключа через пробел укажите версию программы: pro - ProDocumentWorker, exp - ExpertDocumentWorker");
 
-    string? key = Console.ReadLine();
+    string? password = Console.ReadLine();
 
-    if (!String.IsNullOrEmpty(key))
+   // Проверка на введение пароля от версии или пустой строки
+    if (!String.IsNullOrEmpty(password))
     {
-        string[] keySpaceArray = key.Split(' ');
-        if (keySpaceArray.Length != 2)
+        string[] passwordSpaceArray = password.Split(' ');
+        if (passwordSpaceArray.Length != 2)
         {
             Console.WriteLine("Вы ввели не в правильном формате: ключ версия (через пробел)");
             continue;
         }
         else
         {
-            switch (keySpaceArray[1])
+            switch (passwordSpaceArray[1])
             {
+                // Если попытались ввести пароль для версии ProDocument (в конце указали pro)
                 case "pro":
-                    bool keyCheckPro = keySpaceArray[0] == keyProDocument;
-                    if (keyCheckPro)
+                    bool passwordCheckPro = passwordSpaceArray[0] == passwordProDocument;
+                    if (passwordCheckPro)
                     {
                         Console.WriteLine("Вы ввели ключ от версии ProDocumentWorker");
                         DocumentWorker proDocWorker = new ProDocumentWorker();
@@ -37,9 +40,10 @@ while (true)
                         Console.WriteLine("Вы ввели неправильный ключ от версии ProDocument");
                     }
                     break;
+                // Если попытались ввести пароль для версии ExpertDocument (в конце указали exp)
                 case "exp":
-                    bool keyCheckExp = keySpaceArray[0] == keyExpertDocument;
-                    if (keyCheckExp)
+                    bool passwordCheckExp = passwordSpaceArray[0] == passwordExpertDocument;
+                    if (passwordCheckExp)
                     {
                         Console.WriteLine("Вы ввели ключ от версии ExpertDocumentWorker");
                         DocumentWorker expDocWorker = new ExpertDocumentWorker();
