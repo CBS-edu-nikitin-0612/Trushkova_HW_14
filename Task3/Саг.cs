@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task3
+﻿namespace Task3
 {
-    internal class Саг : Vehicle
+    internal class Car : Vehicle
     {
+        public Car(int price, int year, int speed, string name) : base(price, year, speed, name)
+        {
+            
+        }
 
+        public new void Show()
+        {
+            base.Show();
+        }
     }
 }
