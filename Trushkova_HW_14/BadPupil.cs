@@ -1,6 +1,4 @@
-﻿
-
-namespace Trushkova_HW_14
+﻿namespace Trushkova_HW_14
 {
     internal class BadPupil : Pupil
     {  
